@@ -1,4 +1,4 @@
-# Birden fazla input Alanýný Ekleme
+# Birden fazla input Alani Ekleme
 
 #
     for (var i = 0; i < egitim.GrupSayisi.Length; i++)
