@@ -1,0 +1,243 @@
+﻿@model MultiInputSaveChanges.Models.Egitim
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Hello, world!</title>
+</head>
+<body style="margin:30px;">
+    <div class="container-fuild">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Grup Ekleme</h4>
+                </div>
+                <div class="card-body">
+
+
+                    <form asp-controller="Home" asp-action="Index" method="post">
+                        <div class="col-3 m-2">
+                            <label asp-for="EgitimAdi" class="form-label"></label>
+                            <input class="form-control" asp-for="EgitimAdi" placeholder="Egitim Adı">
+                        </div>
+
+                        <div class="input-group">
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupTarihi" class="form-label"></label>
+                                <input asp-for="GrupTarihi" class="form-control" value="2021-01-01 00:00:00" placeholder="Grup Tarihi">
+                            </div>
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupNo" class="form-label"></label>
+                                <input asp-for="GrupNo" class="form-control" value="1" placeholder="Grup No">
+                            </div>
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupSayisi" class="form-label"></label>
+                                <input asp-for="GrupSayisi" class="form-control" value="10" placeholder="Grup Sayisi">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupTarihi" class="form-label"></label>
+                                <input asp-for="GrupTarihi" class="form-control" value="2021-01-02 00:00:00" placeholder="Grup Tarihi">
+                            </div>
+                             <div class="col-3 m-2">
+                                <label asp-for="GrupNo" class="form-label"></label>
+                                <input asp-for="GrupNo" class="form-control" value="2" placeholder="Grup No">
+                            </div>
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupSayisi" class="form-label"></label>
+                                <input asp-for="GrupSayisi" class="form-control" value="20" placeholder="Grup Tarihi">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupTarihi" class="form-label"></label>
+                                <input asp-for="GrupTarihi" class="form-control" value="2021-01-03 00:00:00" placeholder="Grup Tarihi">
+                            </div>
+                             <div class="col-3 m-2">
+                                <label asp-for="GrupNo" class="form-label"></label>
+                                <input asp-for="GrupNo" class="form-control" value="3" placeholder="Grup No">
+                            </div>
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupSayisi" class="form-label"></label>
+                                <input asp-for="GrupSayisi" class="form-control" value="30" placeholder="Grup Tarihi">
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupTarihi" class="form-label"></label>
+                                <input asp-for="GrupTarihi" class="form-control" value="2021-01-04 00:00:00" placeholder="Grup Tarihi">
+                            </div>
+                             <div class="col-3 m-2">
+                                <label asp-for="GrupNo" class="form-label"></label>
+                                <input asp-for="GrupNo" class="form-control" value="4" placeholder="Grup No">
+                            </div>
+                            <div class="col-3 m-2">
+                                <label asp-for="GrupSayisi" class="form-label"></label>
+                                <input asp-for="GrupSayisi" class="form-control" value="40" placeholder="Grup Tarihi">
+                            </div>
+                        </div>
+
+                        <div class="col-3 m-2">
+                            <button type="submit" class="btn btn-success">
+                                Kaydet
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="grupEkleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Grup Ekle</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Tarihi</label>
+                            <input type="date" class="form-control grupTarihi" value="2021-01-01" placeholder="Grup Tarihi">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup No</label>
+                            <input type="text" class="form-control grupNo" value="1" placeholder="Grup No">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Kişi Sayısı</label>
+                            <input type="text" class="form-control grupSayisi" value="10" placeholder="Grup Kişi Sayısı">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Tarihi</label>
+                            <input type="date" class="form-control grupTarihi" value="2021-01-02" placeholder="Grup Tarihi">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup No</label>
+                            <input type="text" class="form-control grupNo" value="2" placeholder="Grup No">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Kişi Sayısı</label>
+                            <input type="text" class="form-control grupSayisi" value="20" placeholder="Grup Kişi Sayısı">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Tarihi</label>
+                            <input type="date" class="form-control grupTarihi" value="2021-01-03" placeholder="Grup Tarihi">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup No</label>
+                            <input type="text" class="form-control grupNo" value="3" placeholder="Grup No">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Kişi Sayısı</label>
+                            <input type="text" class="form-control grupSayisi" value="30" placeholder="Grup Kişi Sayısı">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Tarihi</label>
+                            <input type="date" class="form-control grupTarihi" value="2021-01-04" placeholder="Grup Tarihi">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup No</label>
+                            <input type="text" class="form-control grupNo" value="4" placeholder="Grup No">
+                        </div>
+                        <div class="col-3 m-2">
+                            <label for="grupSayisi" class="form-label">Grup Kişi Sayısı</label>
+                            <input type="text" class="form-control grupSayisi" value="40" placeholder="Grup Kişi Sayısı">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Vazgeç</button>
+                    <button type="button" class="btn btn-primary save" data-bs-dismiss="modal">Grup Ekle</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        const grupTarihi = document.querySelectorAll(".grupTarihi");
+        const grupNo = document.querySelectorAll(".grupNo");
+        const grupSayisi = document.querySelectorAll(".grupSayisi");
+        const submitButton = document.querySelector(".save");
+        const grupSayisiCollection = document.querySelector("#grupSayisiCollection")
+
+        submitButton.addEventListener("click", function(e){
+
+             var joinArray = [];
+              for(var i = 0;i<grupTarihi.length;i++)
+            {
+                var pushItem = grupNo[i].value+","+grupTarihi[i].value+","+grupSayisi[i].value
+                 joinArray.push(pushItem)
+
+            }
+               Grups.value = joinArray;
+
+
+            e.preventDefault();
+        });
+
+
+        /* const grupSayisiInput = document.querySelectorAll(".grupSayisi");
+         const grupSayisiCollection = document.querySelector("#grupSayisiCollection")
+         const formGrup = document.querySelector("form");
+
+
+        formGrup.addEventListener("submit", function(e){
+            var joinArray = [];
+            grupSayisiInput.forEach(function(item){
+                joinArray.push(item.value)
+                grupSayisiCollection.value = joinArray;
+
+                console.log(item.value)
+            })
+
+            e.preventDefault();
+        });
+         eventListeners();
+
+         function eventListeners(){
+             formGrup.addEventListener("submit", addGrup);
+         }
+
+
+         function addGrup(e){
+
+             grupSayisiInput.forEach(function(item){
+                 console.log(item.value)
+             })
+             e.preventDefault();
+
+         }
+
+        */
+
+
+    </script>
+
+</body>
+</html>
