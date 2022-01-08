@@ -1,9 +1,6 @@
-# MultiInputSaveChanges
+# Birden fazla input Alanýný Ekleme
 
-# Birden fazla input Alanýný Ekleme Ýþlemi
-
-# code block
-
+#
     for (var i = 0; i < egitim.GrupSayisi.Length; i++)
     {
         Grup grup = new Grup
